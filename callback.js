@@ -9,6 +9,7 @@ if (code) {
     .then(res => res.json())
     .then(data => {
       document.getElementById('output').textContent = JSON.stringify(data, null, 2);
+      console.log(data.access_token);
     })
     .catch(err => {
       console.log("CODE: " + code);

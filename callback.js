@@ -8,7 +8,7 @@ if (code) {
   })
     .then(res => res.json())
     .then(data => {
-      console.log("gotcha")
+      console.log("CODE: " + code)
       document.getElementById('output').textContent = JSON.stringify(data, null, 2);
     })
     .catch(err => {

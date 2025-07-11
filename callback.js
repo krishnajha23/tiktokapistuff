@@ -14,7 +14,7 @@ if (code) {
       fetch('https://open.tiktokapis.com/v2/video/list/?fields=cover_image_url,id,title', {
         method: 'POST',
         headers: {
-          'Authorization': token,
+          'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({

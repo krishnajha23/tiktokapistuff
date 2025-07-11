@@ -8,7 +8,7 @@ if (code) {
   })
     .then(res => res.json())
     .then(data => {
-      document.getElementById('output') = JSON.stringify(data, null, 2);
+      document.getElementById('output').textContent = JSON.stringify(data, null, 2);
       const accesstoken = data.access_token;
       const openId = data.open_id;
       console.log("ACCESS TOKEN: " + accesstoken)

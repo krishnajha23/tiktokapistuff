@@ -8,10 +8,10 @@ if (code) {
   })
     .then(res => res.json())
     .then(data => {
+      console.log("gotcha")
       document.getElementById('output').textContent = JSON.stringify(data, null, 2);
     })
     .catch(err => {
-      console.log("gotcha")
       document.getElementById('output').textContent = 'Error: ' + err;
     });
 } else {

@@ -11,7 +11,7 @@ if (code) {
       const myresponse = JSON.stringify(data, null, 2);
       const accesstoken = data.access_token;
       fetch('https://open.tiktokapis.com/v2/video/list/', {
-        method: 'GET',
+        method: 'POST',
         headers: {
           Authorization: `Bearer ${accesstoken}`,
           'Content-Type': 'application/json'

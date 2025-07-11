@@ -8,7 +8,23 @@ if (code) {
   })
     .then(res => res.json())
     .then(data => {
-      document.getElementById('output').textContent = JSON.stringify(data, null, 2);
+      const myresponse = JSON.stringify(data, null, 2);
+      const accesstoken = data.access_token;
+      fetch('https://open.tiktokapis.com/v2/video/list/', {
+        method: 'GET',
+        headers: {
+          Authorization: `Bearer ${accesstoken}`,
+          'Content-Type': 'application/json'
+        }
+      })
+        .then(res => res.json())
+        .then(videoData => {
+          console.log("Videos:", videoData);
+        })
+        .catch(err => {
+          console.error("Video fetch error:", err);
+        });
+
     })
     .catch(err => {
       console.log("CODE: " + code);

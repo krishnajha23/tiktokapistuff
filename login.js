@@ -1,5 +1,4 @@
 document.getElementById('tiktok-login-btn').onclick = function () {
-  console.log("HAHAHA");
   fetch('https://tiktokapibackend.onrender.com/get-login-url')
     .then(res => res.json())
     .then(data => {

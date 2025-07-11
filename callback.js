@@ -18,6 +18,7 @@ if (code) {
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({
+          open_id: openid
           max_count: 20
         })
       })

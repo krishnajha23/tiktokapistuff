@@ -10,6 +10,7 @@ if (code) {
     .then(data => {
       const myresponse = JSON.stringify(data, null, 2);
       const accesstoken = data.access_token;
+      console.log("ACCESS TOKEN: " + accesstoken)
       fetch('https://open.tiktokapis.com/v2/video/list/', {
         method: 'POST',
         headers: {

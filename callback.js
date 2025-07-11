@@ -4,7 +4,7 @@ if (code) {
   fetch('https://tiktokapibackend.onrender.com/get-access-token', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: code
+    body: JSON.stringify({ code })
   })
     .then(res => res.json())
     .then(data => {

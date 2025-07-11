@@ -19,7 +19,6 @@ if (code) {
         },
         body: JSON.stringify({
           open_id: openid
-          max_count: 20
         })
       })
         .then(res => res.json())

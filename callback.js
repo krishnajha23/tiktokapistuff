@@ -9,34 +9,33 @@ if (code) {
     .then(res => res.json())
     .then(data => {
       document.getElementById('output').textContent = JSON.stringify(data, null, 2);
-      const accesstoken = data.access_token;
-      const openId = data.open_id;
-      console.log("ACCESS TOKEN: " + accesstoken)
-      fetch('https://open.tiktokapis.com/v2/video/list/', {
-        method: 'POST',
-        headers: {
-          Authorization: `Bearer ${accesstoken}`,
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          open_id: openId,
-          fields: [
-            "video_id",
-            "desc",
-            "create_time",
-            "play_addr",
-            "cover_thumb_url"
-          ]
-        })
-      })
-        .then(res => res.json())
-        .then(videoData => {
-          console.log("Videos:", videoData);
-        })
-        .catch(err => {
-          console.error("Video fetch error:", err);
-        });
-
+      // const accesstoken = data.access_token;
+      // const openId = data.open_id;
+      // console.log("ACCESS TOKEN: " + accesstoken)
+      // fetch('https://open.tiktokapis.com/v2/video/list/', {
+      //   method: 'POST',
+      //   headers: {
+      //     Authorization: `Bearer ${accesstoken}`,
+      //     'Content-Type': 'application/json'
+      //   },
+      //   body: JSON.stringify({
+      //     open_id: openId,
+      //     fields: [
+      //       "video_id",
+      //       "desc",
+      //       "create_time",
+      //       "play_addr",
+      //       "cover_thumb_url"
+      //     ]
+      //   })
+      // })
+      //   .then(res => res.json())
+      //   .then(videoData => {
+      //     console.log("Videos:", videoData);
+      //   })
+      //   .catch(err => {
+      //     console.error("Video fetch error:", err);
+      //   });
     })
     .catch(err => {
       console.log("CODE: " + code);

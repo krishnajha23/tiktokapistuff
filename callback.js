@@ -1,5 +1,4 @@
 const params = new URLSearchParams(window.location.search);
-console.log(params)
 const code = params.get('code');
 if (code) {
   fetch('https://tiktokapibackend.onrender.com/get-access-token', {
@@ -9,6 +8,7 @@ if (code) {
   })
     .then(res => res.json())
     .then(data => {
+      console.log(params)
       document.getElementById('output').textContent = JSON.stringify(data, null, 2);
     })
     .catch(err => {
